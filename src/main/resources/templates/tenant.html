@@ -29,12 +29,12 @@
     <form action="/tenant/addRequest" method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input class="form-control" type="email" id="email" name="email" th:value="${email}">
+            <input placeholder="JohnDoe@mail.com" class="form-control" type="email" id="email" name="email" th:value="${email}">
         </div>
 
         <div class="mb-3">
             <label for="apartmentNumber" class="form-label">Apartment Number:</label>
-            <input class="form-control" type="text" id="apartmentNumber" name="apartmentNumber" th:value="${apartmentNumber}">
+            <input placeholder="105" class="form-control" type="text" id="apartmentNumber" name="apartmentNumber" th:value="${apartmentNumber}">
         </div>
 
         <div class="mb-3">
@@ -50,12 +50,12 @@
 
         <div class="mb-3">
             <label for="desc" class="form-label">Description of the Problem:</label>
-            <textarea class="form-control" id="desc" name="desc" rows="5" cols="50" th:value="${desc}"></textarea>
+            <textarea placeholder="Short Description..." class="form-control" id="desc" name="desc" rows="5" cols="50" th:value="${desc}"></textarea>
         </div>
 
         <div class="mb-3">
             <label for="img" class="form-label">Optional Image Link:</label>
-            <input class="form-control" type="text" id="img" name="img" th:value="${img}">
+            <input placeholder="http://www..." class="form-control" type="text" id="img" name="img" th:value="${img}">
         </div>
 
         <input class="btn btn-success" type="submit" value="Submit Request">

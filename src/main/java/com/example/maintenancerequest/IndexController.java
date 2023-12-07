@@ -81,10 +81,10 @@ public class IndexController {
     {
         List<Request> requestList = requestService.getAllRequests();
 
-        if(apartmentnumber != null) { requestList = requestService.getAllByApartmentNumber(apartmentnumber); }
-        if(!area.isEmpty()) { requestList = requestService.getAllByArea(area); }
-        if(!date.isEmpty()) { requestList = requestService.getAllByDate(date); }
         if(!status.isEmpty()) { requestList = requestService.getAllByState(status); }
+        if(!date.isEmpty()) { requestList = requestService.getAllByDate(date); }
+        if(!area.isEmpty()) { requestList = requestService.getAllByArea(area); }
+        if(apartmentnumber != null) { requestList = requestService.getAllByApartmentNumber(apartmentnumber); }
 
         model.addAttribute("requestList", requestList);
         return "member";
