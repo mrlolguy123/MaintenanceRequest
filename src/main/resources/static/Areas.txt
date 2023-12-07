@@ -1,0 +1,8 @@
+I could make a enum java class and make area represent it rather than a String, but I'm too lazy:
+
+Here's the areas:
+living room
+bathroom
+kitchen
+bedroom
+dining area

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello, Manager!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<a type="button" class="btn btn-primary" th:href="${'http://localhost:8080'}">Back</a>
+<div class="title">
+    <h1>Manager Dashboard</h1>
+</div>
+<div class="center">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Apartment #</th>
+            <th scope="col">Phone #</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">Check-In</th>
+            <th scope="col">Check-Out</th>
+            <th scope="col">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${personList.size() gt 0}" th:each="person : ${personList}">
+            <td th:text="${person.id}">1</td>
+            <td th:text="${person.personname}">Ronald Walker</td>
+            <td th:text="${person.apartmentnumber}">981</td>
+            <td th:text="${person.phonenumber}">2718281828</td>
+            <td th:text="${person.email}">raw40@rocketmail.com</td>
+            <td th:text="${person.checkin}">3-19-1998</td>
+            <td th:text="${person.checkout}">3-20-2998</td>
+            <td>
+                &nbsp;
+                <a type="button" class="btn btn-danger" th:href="${'/manager/delete/' + person.id}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Add</th>
+        <th scope="col">Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <form action="/manager/add" method="post">
+                <div class="mb-3">
+                    <label for="personname" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="personname" name="personname">
+                </div>
+                <div class="mb-3">
+                    <label for="apartmentnumber" class="form-label">Apartment Number</label>
+                    <input type="text" class="form-control" id="apartmentnumber" name="apartmentnumber">
+                </div>
+                <div class="mb-3">
+                    <label for="phonenumber" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phonenumber" name="phonenumber">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="checkin" class="form-label">Check-In</label>
+                    <input type="text" class="form-control" id="checkin" name="checkin">
+                </div>
+                <div class="mb-3">
+                    <label for="checkout" class="form-label">Check-Out</label>
+                    <input type="text" class="form-control" id="checkout" name="checkout">
+                </div>
+                <button type="submit" class="btn btn-success">Add Person</button>
+            </form>
+        </td>
+        <td>
+            <form action="/manager/edit" method="post">
+                <div class="mb-3">
+                    <label for="personid" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="personid" name="personid">
+                </div>
+                <div class="mb-3">
+                    <label for="editApt" class="form-label">Apartment Number</label>
+                    <input type="text" class="form-control" id="editApt" name="editApt">
+                </div>
+                <button type="submit" class="btn btn-success">Update Person</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

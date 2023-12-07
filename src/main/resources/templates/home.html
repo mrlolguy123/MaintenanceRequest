@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="title">
+    <h1>Maintenance Request Program</h1>
+</div>
+<div class="center">
+    <div>
+        <a type="button" class="btn btn-primary" th:href="${'/tenant'}">Tenant View</a>
+        <a type="button" class="btn btn-primary" th:href="${'/member'}">Member View</a>
+        <a type="button" class="btn btn-primary" th:href="${'/manager'}">Manager View</a>
+    </div>
+</div>
+</body>
+</html>
+
